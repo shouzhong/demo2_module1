@@ -3,6 +3,7 @@ import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:module1/page/home_page.dart';
 import 'package:module1/page/login_page.dart';
+import 'package:module1/page/web_page.dart';
 import 'package:provider/provider.dart';
 
 void main() {
@@ -17,13 +18,15 @@ void main() {
 
 Widget _widgetForRoute(String route) {
   switch(route) {
-    case 'page_home':
+    case "page_home":
       return HomePage();
-    case 'page_login':
+    case "page_login":
       return ChangeNotifierProvider(
         create: (_) => LoginViewModel(),
         child: LoginPage(),
       );
+    case "page_web":
+      return WebPage();
     default:
       return Center(
         child: Text("error"),
